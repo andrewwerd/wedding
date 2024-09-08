@@ -113,23 +113,13 @@ function App() {
                 padding: 5,
               }}
             >
-              <Typography fontSize={36}>Дорогие гости</Typography>
+              <Typography fontSize={36} fontWeight={100}>Дорогие гости</Typography>
               <Box>
                 <Typography>
                   С радостью приглашаем вас разделить с нами особенный день —
-                  день нашей свадьбы!
-                </Typography>
-                <Typography>Торжественная церемония состоится</Typography>
-                <Typography fontSize={36} fontWeight={"bold"}>
-                  24 июля 2025
-                </Typography>
-                <Typography> в </Typography>
-                <Typography fontSize={36} fontWeight={"bold"}>
-                  18:00
-                </Typography>
-                <Typography>
-                  Мы будем счастливы видеть вас среди наших самых близких, чтобы
-                  отпраздновать этот незабываемый момент вместе.
+                  день нашей свадьбы! Мы будем счастливы видеть вас среди наших
+                  самых близких, чтобы отпраздновать этот незабываемый момент
+                  вместе.
                 </Typography>
               </Box>
               <Box></Box>
