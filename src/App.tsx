@@ -81,7 +81,7 @@ function App() {
               <div></div>
               <Box
                 sx={{
-                  fontSize: "100px",
+                  fontSize: "72px",
                   fontFamily: "Allegretto Script One, cursive",
                 }}
               >
