@@ -143,7 +143,7 @@ function App() {
                 }}
               >
                 <Typography fontSize={36}>Локация</Typography>
-                {/* <LoadScript
+                <LoadScript
                   googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}
                   id="google-maps-script"
                 >
@@ -154,7 +154,7 @@ function App() {
                   >
                     <Marker position={markerPosition} title="Fuck" />
                   </GoogleMap>
-                </LoadScript> */}
+                </LoadScript>
                 <div></div>
               </Grid2>
               <Grid2
