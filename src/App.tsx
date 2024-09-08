@@ -49,8 +49,6 @@ function App() {
     lng: 28.752653121948242,
   };
 
-  const googleMapApiKey = "AIzaSyAked1C2msTJ7D49WtvnfNhDhcsq6luqww";
-
   return (
     <ThemeProvider theme={theme}>
       <div className="video-container">
