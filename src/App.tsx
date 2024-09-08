@@ -81,13 +81,15 @@ function App() {
               <div></div>
               <Box
                 sx={{
-                  fontSize: "72px",
+                  fontSize: "84px",
                   fontFamily: "Allegretto Script One, cursive",
                 }}
               >
-                <p>Андрей</p>
+                <p>Андрей&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
                 <p>&</p>
-                <p>Марина</p>
+                <p style={{ lineHeight: "140px" }}>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Марина
+                </p>
               </Box>
               <Box>
                 <Typography fontSize={36} fontWeight={100}>
@@ -113,7 +115,9 @@ function App() {
                 padding: 5,
               }}
             >
-              <Typography fontSize={36} fontWeight={100}>Дорогие гости</Typography>
+              <Typography fontSize={36} fontWeight={100}>
+                Дорогие гости
+              </Typography>
               <Box>
                 <Typography>
                   С радостью приглашаем вас разделить с нами особенный день —
@@ -153,6 +157,10 @@ function App() {
                   center={center}
                   zoom={14}
                 >
+                  <Marker
+                    position={markerPosition}
+                    title="Complex Turistic Costesti"
+                  />
                 </GoogleMap>
               </LoadScript>
               <div></div>
