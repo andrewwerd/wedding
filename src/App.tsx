@@ -41,7 +41,7 @@ function App() {
     lng: 28.752653121948242,
   };
   const containerStyle = {
-    width: "80%",
+    width: "100%",
     height: "400px",
   };
   const markerPosition: google.maps.LatLngLiteral = {
@@ -153,7 +153,6 @@ function App() {
                   center={center}
                   zoom={14}
                 >
-                  <Marker position={markerPosition} title="Fuck" />
                 </GoogleMap>
               </LoadScript>
               <div></div>
