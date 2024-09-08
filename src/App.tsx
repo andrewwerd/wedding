@@ -52,121 +52,129 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <div className="video-container">
-        <video autoPlay loop muted playsInline className="background-video">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="background-video"
+          width={windowSize.width}
+          height={windowSize.height}
+        >
           <source src="/wedding/background.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-        <div className="content-overlay">
-          <Box sx={{ width: "100%" }}>
-            <Grid2 container>
-              <Grid2
-                height={windowSize.height}
-                size={12}
+      </div>
+      <div className="content-overlay">
+        <Box sx={{ width: "100%" }}>
+          <Grid2 container>
+            <Grid2
+              height={windowSize.height}
+              size={12}
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "space-around",
+                alignItems: "center",
+              }}
+            >
+              <div></div>
+              <Box
                 sx={{
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "space-around",
-                  alignItems: "center",
+                  fontSize: "100px",
+                  fontFamily: "Great Vibes, cursive",
                 }}
               >
-                <div></div>
-                <Box
-                  sx={{
-                    fontSize: "100px",
-                    fontFamily: "Great Vibes, cursive",
-                  }}
-                >
-                  <p>Андрей</p>
-                  <p>&</p>
-                  <p>Марина</p>
-                </Box>
-                <Box>
-                  <Typography fontSize={36} fontWeight={100}>
-                    июль
-                  </Typography>
-                  <Typography fontSize={72} fontWeight={200}>
-                    24
-                  </Typography>
-                  <Typography fontSize={36} fontWeight={100}>
-                    2025
-                  </Typography>
-                </Box>
-              </Grid2>
-              <Grid2
-                height={windowSize.height}
-                size={{ xs: 12, md: 3 }}
-                sx={{
-                  bgcolor: "rgba(255,255,255,0.5)",
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "space-around",
-                  alignItems: "center",
-                }}
-              >
-                <Typography fontSize={36}>Дорогие гости</Typography>
-                <Box>
-                  <Typography>
-                    С радостью приглашаем вас разделить с нами особенный день —
-                    день нашей свадьбы!
-                  </Typography>
-                  <Typography>Торжественная церемония состоится</Typography>
-                  <Typography fontSize={36} fontWeight={"bold"}>
-                    24 июля 2025
-                  </Typography>
-                  <Typography> в </Typography>
-                  <Typography fontSize={36} fontWeight={"bold"}>
-                    18:00
-                  </Typography>
-                  <Typography>
-                    Мы будем счастливы видеть вас среди наших самых близких,
-                    чтобы отпраздновать этот незабываемый момент вместе.
-                  </Typography>
-                </Box>
-                <Box></Box>
-              </Grid2>
-              <Grid2
-                height={windowSize.height}
-                size={{ xs: 12, md: 3 }}
-                sx={{ bgcolor: "rgba(255,255,255,0.6)" }}
-              >
-                <Typography>Тайминг</Typography>
-              </Grid2>
-              <Grid2
-                height={windowSize.height}
-                size={{ xs: 12, md: 3 }}
-                sx={{
-                  bgcolor: "rgba(255,255,255,0.7)",
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "space-around",
-                  alignItems: "center",
-                }}
-              >
-                <Typography fontSize={36}>Локация</Typography>
-                <LoadScript
-                  googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}
-                  id="google-maps-script"
-                >
-                  <GoogleMap
-                    mapContainerStyle={containerStyle}
-                    center={center}
-                    zoom={14}
-                  >
-                    <Marker position={markerPosition} title="Fuck" />
-                  </GoogleMap>
-                </LoadScript>
-                <div></div>
-              </Grid2>
-              <Grid2
-                height={windowSize.height}
-                size={{ xs: 12, md: 3 }}
-                sx={{ bgcolor: "rgba(255,255,255,0.8)" }}
-              >
-                <Typography>Детали</Typography>
-              </Grid2>
+                <p>Андрей</p>
+                <p>&</p>
+                <p>Марина</p>
+              </Box>
+              <Box>
+                <Typography fontSize={36} fontWeight={100}>
+                  июль
+                </Typography>
+                <Typography fontSize={72} fontWeight={200}>
+                  24
+                </Typography>
+                <Typography fontSize={36} fontWeight={100}>
+                  2025
+                </Typography>
+              </Box>
             </Grid2>
-          </Box>
-        </div>
+            <Grid2
+              height={windowSize.height}
+              size={{ xs: 12, md: 3 }}
+              sx={{
+                bgcolor: "rgba(255,255,255,0.4)",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "space-around",
+                alignItems: "center",
+              }}
+            >
+              <Typography fontSize={36}>Дорогие гости</Typography>
+              <Box>
+                <Typography>
+                  С радостью приглашаем вас разделить с нами особенный день —
+                  день нашей свадьбы!
+                </Typography>
+                <Typography>Торжественная церемония состоится</Typography>
+                <Typography fontSize={36} fontWeight={"bold"}>
+                  24 июля 2025
+                </Typography>
+                <Typography> в </Typography>
+                <Typography fontSize={36} fontWeight={"bold"}>
+                  18:00
+                </Typography>
+                <Typography>
+                  Мы будем счастливы видеть вас среди наших самых близких, чтобы
+                  отпраздновать этот незабываемый момент вместе.
+                </Typography>
+              </Box>
+              <Box></Box>
+            </Grid2>
+            <Grid2
+              height={windowSize.height}
+              size={{ xs: 12, md: 3 }}
+              sx={{ bgcolor: "rgba(255,255,255,0.4)" }}
+            >
+              <Typography>Тайминг</Typography>
+            </Grid2>
+            <Grid2
+              height={windowSize.height}
+              size={{ xs: 12, md: 3 }}
+              sx={{
+                bgcolor: "rgba(255,255,255,0.4)",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "space-around",
+                alignItems: "center",
+              }}
+            >
+              <Typography fontSize={36}>Локация</Typography>
+              <LoadScript
+                googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}
+                id="google-maps-script"
+              >
+                <GoogleMap
+                  mapContainerStyle={containerStyle}
+                  center={center}
+                  zoom={14}
+                >
+                  <Marker position={markerPosition} title="Fuck" />
+                </GoogleMap>
+              </LoadScript>
+              <div></div>
+            </Grid2>
+            <Grid2
+              height={windowSize.height}
+              size={{ xs: 12, md: 3 }}
+              sx={{ bgcolor: "rgba(255,255,255,0.4)" }}
+            >
+              <Typography>Детали</Typography>
+            </Grid2>
+          </Grid2>
+        </Box>
       </div>
     </ThemeProvider>
   );

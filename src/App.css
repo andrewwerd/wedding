@@ -1,19 +1,20 @@
+/* Container for the video background */
 .video-container {
-  position: relative;
-  overflow-x: hidden;
+  position: fixed; /* Fix the position relative to the viewport */
+  top: 0;
+  left: 0;
+  width: 100vw; /* Full viewport width */
+  height: 100vh; /* Full viewport height */
+  overflow: hidden; /* Hide any overflow from the video itself */
+  z-index: -1; /* Place it behind other content */
 }
 
+/* Style for the video element */
 .background-video {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  z-index: -1;
-  transform: translate(-50%, -50%);
-  object-fit: cover;
+  position: absolute; /* Absolute position inside the container */
+  top: 0; /* Stick to the top */
+  left: 0; /* Stick to the left */
+  object-fit: cover; /* Cover the entire container */
 }
 
 .content-overlay {
