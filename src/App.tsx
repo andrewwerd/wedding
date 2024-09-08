@@ -49,6 +49,8 @@ function App() {
     lng: 28.752653121948242,
   };
 
+  const googleMapApiKey = "AIzaSyAked1C2msTJ7D49WtvnfNhDhcsq6luqww";
+
   return (
     <ThemeProvider theme={theme}>
       <div className="video-container">
@@ -144,7 +146,7 @@ function App() {
               >
                 <Typography fontSize={36}>Локация</Typography>
                 <LoadScript
-                  googleMapsApiKey="AIzaSyBUCeca3tFpci24KyvMBWFuqyoB8dQ-TEU"
+                  googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}
                   id="google-maps-script"
                 >
                   <GoogleMap
