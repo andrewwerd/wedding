@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
 import "./App.css";
 import {
@@ -53,7 +53,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <div className="video-container">
         <video autoPlay loop muted playsInline className="background-video">
-          <source src="/background.mp4" type="video/mp4" />
+          <source src="/wedding/background.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         <div className="content-overlay">
@@ -143,7 +143,7 @@ function App() {
                 }}
               >
                 <Typography fontSize={36}>Локация</Typography>
-                <LoadScript
+                {/* <LoadScript
                   googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}
                   id="google-maps-script"
                 >
@@ -154,7 +154,7 @@ function App() {
                   >
                     <Marker position={markerPosition} title="Fuck" />
                   </GoogleMap>
-                </LoadScript>
+                </LoadScript> */}
                 <div></div>
               </Grid2>
               <Grid2
