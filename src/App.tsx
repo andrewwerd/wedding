@@ -110,6 +110,7 @@ function App() {
                 flexDirection: "column",
                 justifyContent: "space-around",
                 alignItems: "center",
+                padding: 5,
               }}
             >
               <Typography fontSize={36}>Дорогие гости</Typography>
@@ -136,7 +137,7 @@ function App() {
             <Grid2
               height={windowSize.height}
               size={{ xs: 12, md: 3 }}
-              sx={{ bgcolor: "rgba(255,255,255,0.4)" }}
+              sx={{ bgcolor: "rgba(255,255,255,0.4)", padding: 5 }}
             >
               <Typography>Тайминг</Typography>
             </Grid2>
@@ -149,6 +150,7 @@ function App() {
                 flexDirection: "column",
                 justifyContent: "space-around",
                 alignItems: "center",
+                padding: 5,
               }}
             >
               <Typography fontSize={36}>Локация</Typography>
@@ -169,7 +171,7 @@ function App() {
             <Grid2
               height={windowSize.height}
               size={{ xs: 12, md: 3 }}
-              sx={{ bgcolor: "rgba(255,255,255,0.4)" }}
+              sx={{ bgcolor: "rgba(255,255,255,0.4)", padding: 5 }}
             >
               <Typography>Детали</Typography>
             </Grid2>
