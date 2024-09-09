@@ -8,6 +8,10 @@ import {
   Grid2,
   Typography,
 } from "@mui/material";
+import { Content } from "./utils/models";
+import { Contents } from "./utils/constants";
+import { LanguageDialog } from "./components";
+import DetailsForm from "./components/detailsForm";
 
 const theme = createTheme({
   typography: {
@@ -20,6 +24,9 @@ function App() {
     width: window.innerWidth,
     height: window.innerHeight,
   });
+
+  const [content, setContent] = useState<Content>();
+  const [isDialogOpen, setIsDialogOpen] = useState<boolean>(true);
 
   useEffect(() => {
     const handleResize = () => {
@@ -65,116 +72,141 @@ function App() {
           Your browser does not support the video tag.
         </video>
       </div>
-      <div className="content-overlay">
-        <Box sx={{ width: "100%" }}>
-          <Grid2 container>
-            <Grid2
-              height={windowSize.height}
-              size={12}
-              sx={{
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "space-around",
-                alignItems: "center",
-              }}
-            >
-              <div></div>
-              <Box
+      {content ? (
+        <div className="content-overlay">
+          <Box sx={{ width: "100%" }}>
+            <Grid2 container>
+              <Grid2
+                height={windowSize.height}
+                size={12}
                 sx={{
-                  fontSize: "84px",
-                  fontFamily: "Allegretto Script One, cursive",
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "space-around",
+                  alignItems: "center",
                 }}
               >
-                <p>Андрей&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-                <p>&</p>
-                <p style={{ lineHeight: "140px" }}>
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Марина
-                </p>
-              </Box>
-              <Box>
-                <Typography fontSize={36} fontWeight={100}>
-                  июль
-                </Typography>
-                <Typography fontSize={72} fontWeight={200}>
-                  24
-                </Typography>
-                <Typography fontSize={36} fontWeight={100}>
-                  2025
-                </Typography>
-              </Box>
-            </Grid2>
-            <Grid2
-              height={windowSize.height}
-              size={{ xs: 12, md: 3 }}
-              sx={{
-                bgcolor: "rgba(255,255,255,0.4)",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "space-around",
-                alignItems: "center",
-                padding: 5,
-              }}
-            >
-              <Typography fontSize={36} fontWeight={100}>
-                Дорогие гости
-              </Typography>
-              <Box>
-                <Typography>
-                  С радостью приглашаем вас разделить с нами особенный день —
-                  день нашей свадьбы! Мы будем счастливы видеть вас среди наших
-                  самых близких, чтобы отпраздновать этот незабываемый момент
-                  вместе.
-                </Typography>
-              </Box>
-              <Box></Box>
-            </Grid2>
-            <Grid2
-              height={windowSize.height}
-              size={{ xs: 12, md: 3 }}
-              sx={{ bgcolor: "rgba(255,255,255,0.4)", padding: 5 }}
-            >
-              <Typography>Тайминг</Typography>
-            </Grid2>
-            <Grid2
-              height={windowSize.height}
-              size={{ xs: 12, md: 3 }}
-              sx={{
-                bgcolor: "rgba(255,255,255,0.4)",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "space-around",
-                alignItems: "center",
-                padding: 5,
-              }}
-            >
-              <Typography fontSize={36}>Локация</Typography>
-              <LoadScript
-                googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}
-                id="google-maps-script"
-              >
-                <GoogleMap
-                  mapContainerStyle={containerStyle}
-                  center={center}
-                  zoom={14}
+                <div></div>
+                <Box
+                  sx={{
+                    fontSize: "84px",
+                    fontFamily: "Allegretto Script One, cursive",
+                  }}
                 >
-                  <Marker
-                    position={markerPosition}
-                    title="Complex Turistic Costesti"
-                  />
-                </GoogleMap>
-              </LoadScript>
-              <div></div>
+                  <p>
+                    {content.coverSection.fianceName}
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  </p>
+                  <p>&</p>
+                  <p style={{ lineHeight: "140px" }}>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    {content.coverSection.fianceeName}
+                  </p>
+                </Box>
+                <Box>
+                  <Typography fontSize={36} fontWeight={100}>
+                    {content.coverSection.month}
+                  </Typography>
+                  <Typography fontSize={72} fontWeight={200}>
+                    24
+                  </Typography>
+                  <Typography fontSize={36} fontWeight={100}>
+                    2025
+                  </Typography>
+                </Box>
+              </Grid2>
+              <Grid2
+                height={windowSize.height}
+                size={{ xs: 12, md: 3 }}
+                sx={{
+                  bgcolor: "rgba(255,255,255,0.4)",
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "space-around",
+                  alignItems: "center",
+                  padding: 5,
+                }}
+              >
+                <Typography fontSize={36} fontWeight={300}>
+                  {content.welcomeSection.title}
+                </Typography>
+                <Box>
+                  <Typography>{content.welcomeSection.content}</Typography>
+                </Box>
+                <Box></Box>
+              </Grid2>
+              <Grid2
+                height={windowSize.height}
+                size={{ xs: 12, md: 3 }}
+                sx={{ bgcolor: "rgba(255,255,255,0.4)", padding: 5 }}
+              >
+                <Typography fontSize={36} fontWeight={300}>
+                  {content.timingSection.title}
+                </Typography>
+              </Grid2>
+              <Grid2
+                height={windowSize.height}
+                size={{ xs: 12, md: 3 }}
+                sx={{
+                  bgcolor: "rgba(255,255,255,0.4)",
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "space-around",
+                  alignItems: "center",
+                  padding: 5,
+                }}
+              >
+                <Typography fontSize={36} fontWeight={300}>
+                  {content.locationSection.title}
+                </Typography>
+                <LoadScript
+                  googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}
+                  id="google-maps-script"
+                >
+                  <GoogleMap
+                    mapContainerStyle={containerStyle}
+                    center={center}
+                    zoom={14}
+                  >
+                    <Marker
+                      position={markerPosition}
+                      title="Complex Turistic Costesti"
+                    />
+                  </GoogleMap>
+                </LoadScript>
+                <div></div>
+              </Grid2>
+              <Grid2
+                height={windowSize.height}
+                size={{ xs: 12, md: 3 }}
+                sx={{
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "space-around",
+                  alignItems: "center",
+                  padding: 5,
+                }}
+              >
+                <Typography fontSize={36} fontWeight={300}>
+                  {content.detailsSection.title}
+                </Typography>
+                <DetailsForm content={content} />
+                <div></div>
+              </Grid2>
             </Grid2>
-            <Grid2
-              height={windowSize.height}
-              size={{ xs: 12, md: 3 }}
-              sx={{ bgcolor: "rgba(255,255,255,0.4)", padding: 5 }}
-            >
-              <Typography>Детали</Typography>
-            </Grid2>
-          </Grid2>
-        </Box>
-      </div>
+          </Box>
+        </div>
+      ) : (
+        <></>
+      )}
+      <LanguageDialog
+        open={isDialogOpen}
+        onClose={(value) => {
+          console.log(value);
+          setContent(Contents[value ?? "ru"]);
+          setIsDialogOpen(false);
+        }}
+      />
     </ThemeProvider>
   );
 }
