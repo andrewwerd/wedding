@@ -17,6 +17,11 @@ export interface Content {
   detailsSection: {
     title: string;
     nameFormLabel: string;
+    partnerCheckboxLabel: string;
     partnerFormLabel: string;
+    presenceFormLabel: string;
+    presenceFormValue1: string;
+    presenceFormValue2: string;
+    presenceFormValue3: string;
   };
 }

@@ -21,7 +21,12 @@ export const Contents: { [key: string]: Content } = {
     detailsSection: {
       title: "Детали",
       nameFormLabel: "Имя, Фамилия",
-      partnerFormLabel: "Имя, Фамилия",
+      partnerFormLabel: "Имя, Фамилия пары",
+      partnerCheckboxLabel: "Буду в паре",
+      presenceFormLabel: "Присутсвие:",
+      presenceFormValue1: "Обязательно буду!",
+      presenceFormValue2: "Нет",
+      presenceFormValue3: "Не знаю",
     },
   },
   ro: {
@@ -44,7 +49,12 @@ export const Contents: { [key: string]: Content } = {
     detailsSection: {
       title: "Detalii",
       nameFormLabel: "Nume, Prenume",
-      partnerFormLabel: "Numele, Prenume",
+      partnerFormLabel: "Numele, Prenume perechii",
+      partnerCheckboxLabel: "Voi fi în pereche",
+      presenceFormLabel: "Prezența:",
+      presenceFormValue1: "Numaidecât!",
+      presenceFormValue2: "Nu!",
+      presenceFormValue3: "Nu stiu!",
     },
   },
 };
