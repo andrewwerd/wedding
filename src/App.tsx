@@ -180,6 +180,7 @@ function App() {
                 height={windowSize.height}
                 size={{ xs: 12, md: 3 }}
                 sx={{
+                  bgcolor: "rgba(255,255,255,0.4)",
                   display: "flex",
                   flexDirection: "column",
                   justifyContent: "space-around",
